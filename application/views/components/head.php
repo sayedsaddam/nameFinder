@@ -1,3 +1,10 @@
+<?php
+/*
+* Filename: head.php
+* Filepath: views / components / head.php
+* Author: Saddam
+*/
+?>
 <!DOCTYPE html>
 <html>
 <head>

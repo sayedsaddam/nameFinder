@@ -1,3 +1,10 @@
+<?php
+/*
+* Filename: name_finder.php
+* Filepath: views / admin / name_finder.php
+* Author: Saddam
+*/
+?>
 <div class="container">
 	<div class="col-lg-6">
 		<h1>Welcome to Name Finder.</h1>
