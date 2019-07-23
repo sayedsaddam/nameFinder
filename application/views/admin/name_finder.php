@@ -58,4 +58,16 @@
 		<img src="<?= base_url('assets/img/profile.png'); ?>" alt="Profile image..." class="img-thumbnail">
 		<caption>This image was taken from the GitHub to set it up for Profile.</caption>
 	</div>
+	<div class="row">
+		<div class="col-lg-6">
+			<div class="row">
+				<div class="col-md-2">
+					<label for="name">Name</label>
+				</div>
+				<div class="col-md-4">
+					<input type="text" name="name" class="form-control" placeholder="Enter name here.">
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
