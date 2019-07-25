@@ -12,40 +12,19 @@
 		<table class="table table-hover">
 			<thead>
 				<th>Serial No.</th>
-				<th>Name</th>
+				<th>First Name</th>
+				<th>Last Name</th>
 				<th>Description / Meaning</th>
 			</thead>
 			<tbody>
+			<?php $serial = 1; foreach($names as $name): ?>
 				<tr>
-					<td>1</td>
-					<td>Saddam Hussain</td>
-					<td>One who confronts</td>
+					<td><?= $serial++; ?></td>
+					<td><?= $name->first_name; ?></td>
+					<td><?= $name->last_name; ?></td>
+					<td><?= $name->name_description; ?></td>
 				</tr>
-				<tr>
-					<td>2</td>
-					<td>Saddam Hussain</td>
-					<td>One who confronts</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>Saddam Hussain</td>
-					<td>One who confronts</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td>Saddam Hussain</td>
-					<td>One who confronts</td>
-				</tr>
-				<tr>
-					<td>5</td>
-					<td>Saddam Hussain</td>
-					<td>One who confronts</td>
-				</tr>
-				<tr>
-					<td>6</td>
-					<td>Saddam Hussain</td>
-					<td>One who confronts</td>
-				</tr>
+			<?php endforeach; ?>
 			</tbody>
 		</table>
 		<p class="text-right">

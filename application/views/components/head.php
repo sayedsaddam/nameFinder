@@ -12,6 +12,8 @@
 	<link rel="stylesheet" type="text/css" href="<?= base_url('assets/css/bootstrap.min.css'); ?>">
 	<script type="text/javascript" src="<?= base_url('assets/js/jquery.js'); ?>"></script>
 	<script type="text/javascript" src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
+  <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
 <!-- Navbar -->
