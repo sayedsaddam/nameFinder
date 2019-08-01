@@ -17,7 +17,7 @@
 </head>
 <body>
 <!-- Navbar -->
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -59,11 +59,15 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="<?= base_url('login/sign_in'); ?>">Login</a></li>
+            <li><a href="<?= base_url('login'); ?>">Login</a></li>
             <li><a href="<?= base_url('login/sign_up'); ?>">Sign Up</a></li>
             <li><a href="<?= base_url('name_finder/sitemap'); ?>">Sitemap</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#">Divider</a></li>
+            <?php if($this->session->userdata('username')): ?>
+              <li><a href="<?= base_url('login/logout'); ?>">Logout</a></li>
+            <?php else: ?>
+              <li><a href="#">Divider</a></li>
+            <?php endif; ?>
           </ul>
         </li>
       </ul>
