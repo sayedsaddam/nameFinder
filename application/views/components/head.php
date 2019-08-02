@@ -34,7 +34,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="<?= base_url('name_finder'); ?>">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="<?= base_url('home/about_us'); ?>">About</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Names <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -50,23 +50,23 @@
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search for names..." required>
+          <input type="text" class="form-control input-sm" placeholder="Search for names..." required>
         </div>
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" name="search" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="<?= base_url('login'); ?>">Login</a></li>
+            <li <?php if($this->session->userdata('username')): ?> class="disabled" <?php endif; ?>><a href="<?= base_url('login'); ?>">Login</a></li>
             <li><a href="<?= base_url('login/sign_up'); ?>">Sign Up</a></li>
             <li><a href="<?= base_url('name_finder/sitemap'); ?>">Sitemap</a></li>
             <li role="separator" class="divider"></li>
             <?php if($this->session->userdata('username')): ?>
               <li><a href="<?= base_url('login/logout'); ?>">Logout</a></li>
             <?php else: ?>
-              <li><a href="#">Divider</a></li>
+              <li><a href="#">Click on the login.</a></li>
             <?php endif; ?>
           </ul>
         </li>

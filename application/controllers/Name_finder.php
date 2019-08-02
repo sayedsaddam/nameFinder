@@ -15,6 +15,36 @@ class Name_finder extends CI_Controller{
 		$data['names'] = $this->Names_model->get_names();
 		$this->load->view('components/template', $data);
 	}
+	// Add new names to the list. -- Load the form.
+	public function add_names(){
+		if(!$this->session->userdata('username')){
+			redirect('login');
+		}
+		$data['title'] = 'Add Names | Names Finder';
+		$data['body'] = 'admin/add_names';
+		$this->load->view('components/template', $data);
+	}
+	// Store names to the database.
+	public function store_names(){
+		$this->form_validation->set_rules('fname', 'First Name', 'required');
+		$this->form_validation->set_rules('lname', 'Last Name', 'required');
+		$this->form_validation->set_rules('description', 'Description', 'required');
+		$this->form_validation->set_rules('category', 'Category', 'required');
+		if($this->form_validation->run() == TRUE){
+			$data = array(
+				'first_name' => $this->input->post('fname'),
+				'last_name' => $this->input->post('lname'),
+				'name_description' => $this->input->post('description'),
+				'category' => $this->input->post('category'),
+				'created_at' => date('Y-m-d')
+			);
+			$this->Names_model->save_names($data);
+			$this->session->set_flashdata('success', '<strong>Woohoo !</strong> Data has been saved successfully.');
+			redirect('name_finder');
+		}else{
+			$this->add_names();
+		}
+	}
 	// Retrieving data from database and display it in the CI Datatables library.
 	public function get_data(){
 		$this->load->library('Datatables');

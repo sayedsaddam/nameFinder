@@ -10,4 +10,10 @@ class Home extends CI_Controller {
 
 		$this->load->view('index', array('users' => $users));
 	}
+	// About the website.
+	public function about_us(){
+		$data['title'] = 'About Us | Name Finder';
+		$data['body'] = 'admin/about_us';
+		$this->load->view('components/template', $data);
+	}
 }

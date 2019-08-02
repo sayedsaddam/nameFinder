@@ -11,6 +11,20 @@ class Names_model extends CI_Model{
 		$this->db->limit(10);
 		return $this->db->get()->result();
 	}
+	// Add new names to the database.
+	public function save_names($data){
+		return $this->db->insert('names_list', $data);
+		if($this->db->affected_rows() > 0)
+			return TRUE;
+		return FALSE;
+	}
+	// View single name.
+	public function name_detail($id){
+		$this->db->select('id, first_name, last_name, name_description, category');
+		$this->db->from('names_list');
+		$this->db->where('id', $id);
+		return $this->db->get()->row();
+	}
 }
 
 
