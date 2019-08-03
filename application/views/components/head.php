@@ -59,7 +59,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Actions <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li <?php if($this->session->userdata('username')): ?> class="disabled" <?php endif; ?>><a href="<?= base_url('login'); ?>">Login</a></li>
+            <li><a <?php if($this->session->userdata('username')): ?> href="javascript:void(0);" <?php else: ?> href="<?= base_url('login'); endif; ?>"><?php if($user = $this->session->userdata('username')): echo '<strong>'.$user.'</strong>'; else: ?>Login <?php endif; ?></a></li>
             <li><a href="<?= base_url('login/sign_up'); ?>">Sign Up</a></li>
             <li><a href="<?= base_url('name_finder/sitemap'); ?>">Sitemap</a></li>
             <li role="separator" class="divider"></li>
