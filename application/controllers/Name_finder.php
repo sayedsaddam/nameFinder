@@ -45,6 +45,12 @@ class Name_finder extends CI_Controller{
 			$this->add_names();
 		}
 	}
+	// Sitemap.
+	public function sitemap(){
+		$data['title'] = 'Sitemap | Name Finder';
+		$data['body'] = 'admin/sitemap';
+		$this->load->view('components/template', $data);
+	}
 	// Retrieving data from database and display it in the CI Datatables library.
 	public function get_data(){
 		$this->load->library('Datatables');
