@@ -32,38 +32,38 @@
 						<a href="#nameModal" data-toggle="modal" data-target="#detailModal<?= $name->id; ?>"><?= substr($name->name_description, 0, 25).'...'; ?>
 						</a>
 						<div class="modal fade" id="detailModal<?php echo $name->id; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                   <div class="modal-dialog" role="document">
-                     <div class="modal-content">
-                         <!--Header-->
-                       <div class="modal-header">
-                         <h4 style="display: inline-block;" class="modal-title" id="myModalLabel">Name's detail... </h4>
-                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                           <span aria-hidden="true">×</span>
-                         </button>
-                       </div>
-                       <!--Body-->
-                       <div class="modal-body">
-                         <div class="row">
-                           <div class="col-md-10 col-md-offset-1 text-center">
-                             <h4><strong>Description</strong></h4>
-                             <p><?php echo $detail->name_description; ?></p>
-                           </div>
-                         </div>
-                       </div>
-                       <!--Footer-->
-                       <div class="modal-footer">
-                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                       </div>
-                     </div>
-                   </div>
-                 </div>
+		                   <div class="modal-dialog" role="document">
+		                     <div class="modal-content">
+		                         <!--Header-->
+		                       <div class="modal-header">
+		                         <h4 style="display: inline-block;" class="modal-title" id="myModalLabel">Name's detail... </h4>
+		                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		                           <span aria-hidden="true">×</span>
+		                         </button>
+		                       </div>
+		                       <!--Body-->
+		                       <div class="modal-body">
+		                         <div class="row">
+		                           <div class="col-md-10 col-md-offset-1 text-center">
+		                             <h4><strong>Description</strong></h4>
+		                             <p><?php echo $detail->name_description; ?></p>
+		                           </div>
+		                         </div>
+		                       </div>
+		                       <!--Footer-->
+		                       <div class="modal-footer">
+		                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		                       </div>
+		                     </div>
+		                   </div>
+		                </div>
 					</td>
 				</tr>
 			<?php endforeach; ?>
 			</tbody>
 		</table>
 		<p class="text-right">
-			<a href="#">Read more...</a>
+			<a href="<?php echo base_url('name_finder/list_names'); ?>">Read more...</a>
 		</p>
 	</div>
 	<div class="col-lg-6">

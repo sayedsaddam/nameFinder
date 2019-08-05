@@ -12,10 +12,10 @@
 							<li><a href="<?= base_url('name_finder'); ?>">Home</a></li>
 							<li><a href="<?= base_url('home/about_us'); ?>">About Us</a></li>
 							<li><a href="<?= base_url('name_finder/add_names'); ?>">Add Names</a></li>
-							<li><a href="<?= base_url('name_finder/view_names'); ?>">View Names</a></li>
+							<li><a href="<?= base_url('name_finder/list_names'); ?>">View Names</a></li>
 							<li><a href="<?= base_url('name_finder/search_names'); ?>">Search Names</a></li>
 							<li><a href="<?= base_url('name_finder/downloads'); ?>">Downlads</a></li>
-							<li><a href="<?= base_url('name_finder/contact'); ?>">Contact Us</a></li>
+							<li><a href="<?= base_url('home/about_us'); ?>">Contact Us</a></li>
 						</ul>
 					</div>
 					<div class="col-md-6">

@@ -17,10 +17,10 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-lg-4 col-lg-offset-4">
+				<div class="col-lg-6 col-lg-offset-3">
 					<div class="panel panel-info">
 						<div class="panel-heading text-right">
-							<h3>Create an account</h3>
+							<h3>Create an account <small>Fill out the form, it's easy</small></h3>
 						</div>
 						<form action="<?= base_url('login/signup'); ?>" method="post">
 							<input type="hidden" name="created_at" value="<?php echo date('Y-m-d'); ?>">

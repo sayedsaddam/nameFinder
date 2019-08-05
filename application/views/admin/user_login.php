@@ -10,7 +10,7 @@
 					<?php endif; ?>
 					<div class="panel panel-info">
 						<div class="panel-heading text-right">
-							<h3>Login</h3>
+							<h3>Login <small>by using your credentials</small></h3>
 						</div>
 						<form action="<?= base_url('login/sign_in'); ?>" method="post">
 							<div class="panel-body">
@@ -35,13 +35,19 @@
 									<div class="col-lg-4"></div>
 									<div class="col-lg-8">
 										<input type="submit" name="submit" class="btn btn-primary btn-sm" value="Login">
-										<input type="reset" name="reset" class="btn btn-danger btn-sm" value="Clear">
+										<small><a href="<?= base_url('login/sign_up'); ?>">Don't have an account?</a></small>
 									</div>
 								</div>
 							</div>
 						</form>
 						<div class="panel-footer"></div>
 					</div>
+					<?php if($logout = $this->session->flashdata('logged_out')): ?>
+					<div class="alert alert-success alert-dismissible">
+						<a href="#" class="close" aria-lable="close" data-dismiss="alert">&times;</a>
+						<p class="text-center"><?= $logout; ?></p>
+					</div>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

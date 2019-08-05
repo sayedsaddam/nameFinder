@@ -15,6 +15,22 @@ class Name_finder extends CI_Controller{
 		$data['names'] = $this->Names_model->get_names();
 		$this->load->view('components/template', $data);
 	}
+	// Get all names.
+	public function list_names(){
+		$data['title'] = 'List Names | Name Finder';
+		$data['body'] = 'admin/list_names';
+		$data['names'] = $this->Names_model->get_all_names();
+		$this->load->view('components/template', $data);
+	}
+	// Delete names.
+	public function delete_name(){
+		if($this->Names_model->delete_names($id)){
+			$this->session->set_flashdata('deleted', 'Name has been deleted successfully!');
+			redirec('name_finder/list_names');
+		}else{
+			echo "Failed to delete name";
+		}
+	}
 	// Add new names to the list. -- Load the form.
 	public function add_names(){
 		if(!$this->session->userdata('username')){

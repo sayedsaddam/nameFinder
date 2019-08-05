@@ -39,12 +39,12 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Names <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="<?= base_url('name_finder/add_names'); ?>">Add Names</a></li>
-            <li><a href="<?= base_url('name_finder/view_names'); ?>">View Names</a></li>
+            <li><a href="<?= base_url('name_finder/list_names'); ?>">View Names</a></li>
             <li><a href="<?= base_url('name_finder/search_names'); ?>">Search Names</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="/">Downlads</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="<?= base_url('name_finder/contact'); ?>">Contact</a></li>
+            <li><a href="<?= base_url('home/about_us'); ?>">Contact</a></li>
           </ul>
         </li>
       </ul>
