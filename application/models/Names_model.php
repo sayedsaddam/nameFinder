@@ -43,6 +43,16 @@ class Names_model extends CI_Model{
 		$this->db->where('id', $id);
 		return $this->db->get()->row();
 	}
+	// Search for names.
+	public function search_names($name){
+		$this->db->select('id, first_name, last_name, name_description, category');
+		$this->db->from('names_list');
+		$this->db->like('first_name', $name);
+		$this->db->or_like('last_name', $name);
+		$this->db->or_like('name_description', $name);
+		$this->db->or_like('category', $name);
+		return $this->db->get()->result();
+	}
 }
 
 

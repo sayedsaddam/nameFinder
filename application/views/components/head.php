@@ -48,11 +48,11 @@
           </ul>
         </li>
       </ul>
-      <form class="navbar-form navbar-left">
+      <form action="<?= base_url('name_finder/search_names'); ?>" method="GET" class="navbar-form navbar-left">
         <div class="form-group">
-          <input type="text" class="form-control input-sm" placeholder="Search for names..." required>
+          <input type="text" name="name" class="form-control input-sm" placeholder="Search for names..." required>
         </div>
-        <button type="submit" name="search" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+        <button type="submit" name="submit" class="btn btn-default btn-sm"><span class="glyphicon glyphicon-search"></span></button>
       </form>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"></a></li>

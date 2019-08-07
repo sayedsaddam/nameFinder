@@ -67,6 +67,14 @@ class Name_finder extends CI_Controller{
 		$data['body'] = 'admin/sitemap';
 		$this->load->view('components/template', $data);
 	}
+	// Search names.
+	public function search_names(){
+		$name = $this->input->get('name');
+		$data['title'] = 'Search Results | Name Finder';
+		$data['body'] = 'admin/name_finder';
+		$data['search_results'] = $this->Names_model->search_names($name);
+		$this->load->view('components/template', $data);
+	}
 	// Retrieving data from database and display it in the CI Datatables library.
 	public function get_data(){
 		$this->load->library('Datatables');
