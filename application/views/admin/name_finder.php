@@ -7,9 +7,8 @@
 ?>
 <?php if(empty($search_results)): ?>
 <div class="container">
-	<div class="col-lg-6">
-		<h1>Welcome to Name Finder.</h1>
-		<code>Find and add new names to the list.</code><br><br>
+	<div class="col-lg-8">
+		<h1>Welcome to Name Finder.</h1><hr>
 		<?php if($success = $this->session->flashdata('success')): ?>
 			<div class="alert alert-success text-center">
 				<p><?php echo $success; ?></p>
@@ -20,6 +19,7 @@
 				<th>Serial No.</th>
 				<th>First Name</th>
 				<th>Last Name</th>
+				<th>Category</th>
 				<th>Description / Meaning</th>
 			</thead>
 			<tbody>
@@ -30,6 +30,11 @@
 					<td><?= $serial++; ?></td>
 					<td><?= $name->first_name; ?></td>
 					<td><?= $name->last_name; ?></td>
+					<td>
+						<div <?php if($name->category == 'Asian Muslim'): ?> class="label label-primary" <?php elseif($name->category == 'Arabian'): ?> class="label label-warning" <?php else: ?> class="label label-danger" <?php endif; ?>>
+								<?= $name->category; ?>
+						</div>
+					</td>
 					<td>
 						<a href="#nameModal" data-toggle="modal" data-target="#detailModal<?= $name->id; ?>"><?= substr($name->name_description, 0, 25).'...'; ?>
 						</a>
@@ -68,11 +73,17 @@
 			<a href="<?php echo base_url('name_finder/list_names'); ?>">Read more...</a>
 		</p>
 	</div>
-	<div class="col-lg-6">
-		<h1>The Next Column in the grid.</h1>
-		<code>Here's the next column of this grid.</code><br><br>
-		<img src="<?= base_url('assets/img/profile.png'); ?>" alt="Profile image..." class="img-thumbnail">
-		<caption>This image was taken from the GitHub to set it up for Profile.</caption>
+	<div class="col-lg-4">
+		<h1>Recently Added</h1><hr>
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<marquee direction="up" scrollamount="1" onmouseover="this.stop();" onmouseout="this.start();">
+					<?php foreach($names as $name): ?>
+					<p><?php echo '<strong>'.$name->first_name.' '.$name->last_name.'</strong> is <strong>'.$name->category.'</strong> name.'; ?></p>
+				<?php endforeach; ?>
+				</marquee>
+			</div>
+		</div>
 	</div>
 </div>
 <?php elseif(!empty($search_results)): ?>
@@ -89,6 +100,7 @@
 				<th>Serial No.</th>
 				<th>First Name</th>
 				<th>Last Name</th>
+				<th>Category</th>
 				<th>Description / Meaning</th>
 			</thead>
 			<tbody>
@@ -98,6 +110,11 @@
 					<td><?= $serial++; ?></td>
 					<td><?= $name->first_name; ?></td>
 					<td><?= $name->last_name; ?></td>
+					<td>
+						<div <?php if($name->category == 'Asian Muslim'): ?> class="label label-primary" <?php elseif($name->category == 'Arabian'): ?> class="label label-warning" <?php else: ?> class="label label-danger" <?php endif; ?>>
+								<?= $name->category; ?>
+						</div>
+					</td>
 					<td>
 						<a href="#nameModal" data-toggle="modal" data-target="#detailModal<?= $name->id; ?>"><?= substr($name->name_description, 0, 25).'...'; ?>
 						</a>
