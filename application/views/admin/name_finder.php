@@ -78,9 +78,9 @@
 		<div class="panel panel-default">
 			<div class="panel-body">
 				<marquee direction="up" scrollamount="1" onmouseover="this.stop();" onmouseout="this.start();">
-					<?php foreach($names as $name): ?>
+					<?php if(empty($search_results) AND !empty($names)): foreach($names as $name): ?>
 					<p><?php echo '<strong>'.$name->first_name.' '.$name->last_name.'</strong> is <strong>'.$name->category.'</strong> name.'; ?></p>
-				<?php endforeach; ?>
+				<?php endforeach; endif; ?>
 				</marquee>
 			</div>
 		</div>
@@ -89,7 +89,7 @@
 <?php elseif(!empty($search_results)): ?>
 	<div class="container">
 	<div class="col-lg-12">
-		<h1>Searh results <small>For: <?php echo $_GET['name']; ?></small></h1>
+		<h1>Searh results <small>For: <?php echo @$_GET['name']; ?></small></h1>
 		<?php if($success = $this->session->flashdata('success')): ?>
 			<div class="alert alert-success text-center">
 				<p><?php echo $success; ?></p>
@@ -151,11 +151,12 @@
 		</table>
 	</div>
 </div>
-<?php else: ?>
+<?php endif; ?>
+<?php if(empty($search_results) AND empty($names)): ?>
 <div class="container">
-	<div class="col-lg-6 col-lg-offset-3">
+	<div class="col-lg-8 text-center">
 		<div class="alert alert-danger">
-			<p><strong>Oops !</strong>No recored found matching your search query.</p>
+			<p><strong>Oops!</strong> No recored found matching your search query.</p>
 		</div>
 	</div>
 </div>
