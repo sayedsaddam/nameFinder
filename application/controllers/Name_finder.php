@@ -75,6 +75,23 @@ class Name_finder extends CI_Controller{
 		$data['search_results'] = $this->Names_model->search_names($name);
 		$this->load->view('components/template', $data);
 	}
+	// Export to Excel/CSV.
+	public function export_csv(){
+		$filename = 'Names_'.date('Y-m-d').'.csv';
+		header("Content-Description: File Transfer");
+		header("Content-Disposition: attachment; filename=$filename");
+		header("Content-Type: application/csv; ");
+		$names = $this->Names_model->get_for_csv(); // Get data.
+		$file = fopen('php://output', 'w'); // File creation.
+		$header = array("ID","First Name","Last Name","Category","Description","Date");
+		fputcsv($file, $header);
+		foreach ($names as $key=>$line){
+			fputcsv($file, $line);
+		}
+		fclose($file);
+		exit;
+
+	}
 	// Retrieving data from database and display it in the CI Datatables library.
 	public function get_data(){
 		$this->load->library('Datatables');

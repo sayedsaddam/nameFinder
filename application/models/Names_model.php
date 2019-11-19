@@ -53,6 +53,12 @@ class Names_model extends CI_Model{
 		$this->db->or_like('category', $name);
 		return $this->db->get()->result();
 	}
+	// Get names for CSV.
+	public function get_for_csv(){
+		$this->db->select('*');
+		$this->db->from('names_list');
+		return $this->db->get()->result_array();
+	}
 }
 
 

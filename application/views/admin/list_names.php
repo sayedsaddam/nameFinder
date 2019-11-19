@@ -16,7 +16,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
-			<h2>List of Names <small>With meaning/description</small></h2><hr>
+			<h2>List of Names <small>With meaning/description | <a href="<?php echo base_url('name_finder/export_csv'); ?>" class="btn btn-success btn-xs">Export CSV</a></small></h2><hr>
 			<table class="table table-striped table-reponsive">
 				<thead>
 					<tr>
